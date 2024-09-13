@@ -12,6 +12,7 @@ body {
     height: 100vh;
     background-color: #f0f0f0;
     font-family: Arial, sans-serif;
+    overflow: hidden; /* Evita que o conteúdo da animação fique fora da tela */
 }
 
 #container {
@@ -20,15 +21,26 @@ body {
     position: relative;
 }
 
-/* Desafio 1 - Ônibus */
+/* Desafio 1 - Ônibus com animação */
 .carro {
     position: relative;
-    width: 600px; /* Aumentei o tamanho do ônibus */
-    height: 200px; /* Aumentei a altura para parecer um ônibus */
+    width: 600px;
+    height: 200px;
     background-color: red;
     border-radius: 50px 50px 0 0;
     margin: 0 auto;
     top: 50px;
+    animation: moverOnibus 5s infinite linear; /* Adicionando animação */
+}
+
+/* Animação de movimento do ônibus */
+@keyframes moverOnibus {
+    0% {
+        transform: translateX(-800px); /* Começa fora da tela à esquerda */
+    }
+    100% {
+        transform: translateX(800px); /* Sai pela direita da tela */
+    }
 }
 
 /* Rodas do ônibus */
@@ -36,14 +48,14 @@ body {
     content: '';
     position: absolute;
     background-color: black;
-    width: 80px; /* Aumentei o tamanho das rodas */
+    width: 80px;
     height: 80px;
     border-radius: 50%;
-    bottom: -40px; /* Ajustei a posição das rodas */
+    bottom: -40px;
 }
 
 .carro::before {
-    left: 50px; /* Ajustei o espaçamento das rodas */
+    left: 50px;
 }
 
 .carro::after {
@@ -52,12 +64,12 @@ body {
 
 /* Desafio 2 - Robô Futurista */
 .robo {
-    width: 100px; /* Diminui o tamanho do robô */
-    height: 150px; /* Proporcionalmente menor */
+    width: 100px;
+    height: 150px;
     background-color: silver;
     position: absolute;
-    top: 25px; /* Posicionei dentro do ônibus */
-    left: 250px; /* Centralizei dentro do ônibus */
+    top: 25px;
+    left: 250px;
 }
 
 .cabeca {
