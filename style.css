@@ -1,0 +1,88 @@
+/* Estilos globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+#container {
+    width: 800px;
+    height: 600px;
+    position: relative;
+}
+
+/* Desafio 1 - Ônibus */
+.carro {
+    position: relative;
+    width: 600px; /* Aumentei o tamanho do ônibus */
+    height: 200px; /* Aumentei a altura para parecer um ônibus */
+    background-color: red;
+    border-radius: 50px 50px 0 0;
+    margin: 0 auto;
+    top: 50px;
+}
+
+/* Rodas do ônibus */
+.carro::before, .carro::after {
+    content: '';
+    position: absolute;
+    background-color: black;
+    width: 80px; /* Aumentei o tamanho das rodas */
+    height: 80px;
+    border-radius: 50%;
+    bottom: -40px; /* Ajustei a posição das rodas */
+}
+
+.carro::before {
+    left: 50px; /* Ajustei o espaçamento das rodas */
+}
+
+.carro::after {
+    right: 50px;
+}
+
+/* Desafio 2 - Robô Futurista */
+.robo {
+    width: 100px; /* Diminui o tamanho do robô */
+    height: 150px; /* Proporcionalmente menor */
+    background-color: silver;
+    position: absolute;
+    top: 25px; /* Posicionei dentro do ônibus */
+    left: 250px; /* Centralizei dentro do ônibus */
+}
+
+.cabeca {
+    width: 50px;
+    height: 50px;
+    background-color: gray;
+    position: absolute;
+    top: -60px;
+    left: 25px;
+    border-radius: 20%;
+}
+
+.olho {
+    width: 10px;
+    height: 10px;
+    background-color: blue;
+    position: absolute;
+    top: 15px;
+    border-radius: 50%;
+}
+
+.olho.esquerdo {
+    left: 5px;
+}
+
+.olho.direito {
+    right: 5px;
+}
